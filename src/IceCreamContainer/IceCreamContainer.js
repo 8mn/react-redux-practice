@@ -11,27 +11,27 @@ import {connect} from 'react-redux'
 // 3. connect above two functions with connect(HOF) from react-redux
 
 
-function CakeContainer(props) {
+function IceCreamContainer(props) {
     return (
         <div>
-            <h2>No. of cakes: {props.numOfCakes}</h2>
-            <button onClick={props.buyCake}>Buy Cake</button>
+            <h2>No. of Ice cream: {props.numOfIceCream}</h2>
+            <button onClick={props.buyIceCream}>Buy Ice Creams</button>
         </div>
     )
 }
 
 const mapStateToProps = (state) => {
  return {
-     numOfCakes:state.cake.numOfCakes
+     numOfIceCream:state.iceCream.numOfIceCream
      // in complex apps selectors are used to extract only required information
  }
 }
  
 const mapDispatchToProps = dispatch => {
     return {
-        buyCake: () => dispatch(action.buyCake())
+        buyIceCream: () => dispatch(action.buyIceCream())
     }
 }
 
 
-export default connect(mapStateToProps,mapDispatchToProps)(CakeContainer)
+export default connect(mapStateToProps,mapDispatchToProps)(IceCreamContainer)
